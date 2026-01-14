@@ -1,0 +1,31 @@
+{{- if .Values.api.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: kargo-api-slb
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "kargo.labels" . | nindent 4 }}
+    {{- include "kargo.api.labels" . | nindent 4 }}
+  {{- with (mergeOverwrite (deepCopy .Values.global.annotations) .Values.api.service.annotations) }}
+  annotations:
+    service.beta.kubernetes.io/alibaba-cloud-loadbalancer-address-type: internet
+    {{- range $key, $value := . }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+  {{- end }}
+spec:
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    {{- if .Values.api.tls.enabled }}
+    port: 443
+    {{- else }}
+    port: 80
+    {{- end }}
+    nodePort: 31000
+    targetPort: 8080
+  selector:
+    {{- include "kargo.selectorLabels" . | nindent 4 }}
+    {{- include "kargo.api.labels" . | nindent 4 }}
+{{- end }}
