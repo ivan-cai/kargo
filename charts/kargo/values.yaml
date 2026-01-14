@@ -318,13 +318,13 @@ api:
       #   readOnly: true
 
       ## @param api.oidc.dex.resources Resources limits and requests for the Dex server containers.
-      resources: {}
-        # limits:
-        #   cpu: 100m
-        #   memory: 128Mi
-        # requests:
-        #   cpu: 100m
-        #   memory: 128Mi
+      resources:
+         limits:
+           cpu: 1000m
+           memory: 1024Mi
+         requests:
+           cpu: 100m
+           memory: 128Mi
 
       ## @param api.oidc.dex.nodeSelector Node selector for Dex server pods. Defaults to `global.nodeSelector`.
       nodeSelector: {}
@@ -401,13 +401,13 @@ api:
   #      name: secret-name
 
   ## @param api.resources Resources limits and requests for the api containers.
-  resources: {}
-    # limits:
-    #   cpu: 100m
-    #   memory: 128Mi
-    # requests:
-    #   cpu: 100m
-    #   memory: 128Mi
+  resources:
+     limits:
+       cpu: 1000m
+       memory: 1024Mi
+     requests:
+       cpu: 100m
+       memory: 128Mi
 
   ## @param api.nodeSelector Node selector for api pods. Defaults to `global.nodeSelector`.
   nodeSelector: {}
@@ -585,13 +585,13 @@ controller:
   volumeMounts: []
 
   ## @param controller.resources Resources limits and requests for the controller containers.
-  resources: {}
-    # limits:
-    #   cpu: 100m
-    #   memory: 128Mi
-    # requests:
-    #   cpu: 100m
-    #   memory: 128Mi
+  resources:
+     limits:
+       cpu: 1000m
+       memory: 1024Mi
+     requests:
+       cpu: 100m
+       memory: 128Mi
 
   ## @param controller.nodeSelector Node selector for controller pods. Defaults to `global.nodeSelector`.
   nodeSelector: {}
@@ -661,13 +661,13 @@ garbageCollector:
   #      name: secret-name
 
   ## @param garbageCollector.resources Resources limits and requests for the garbage collector containers.
-  resources: {}
-    # limits:
-    #   cpu: 100m
-    #   memory: 128Mi
-    # requests:
-    #   cpu: 100m
-    #   memory: 128Mi
+  resources:
+     limits:
+       cpu: 1000m
+       memory: 1024Mi
+     requests:
+       cpu: 100m
+       memory: 128Mi
 
   ## @param garbageCollector.nodeSelector Node selector for the garbage collector pods. Defaults to `global.nodeSelector`.
   nodeSelector: {}
@@ -724,13 +724,13 @@ externalWebhooksServer:
   #      name: secret-name
 
   ## @param externalWebhooksServer.resources Resources limits and requests for the external webhook server containers.
-  resources: {}
-    # limits:
-    #   cpu: 100m
-    #   memory: 128Mi
-    # requests:
-    #   cpu: 100m
-    #   memory: 128Mi
+  resources:
+     limits:
+       cpu: 1000m
+       memory: 1024Mi
+     requests:
+       cpu: 100m
+       memory: 128Mi
 
   ## @param externalWebhooksServer.nodeSelector Node selector for external webhook server pods. Defaults to `global.nodeSelector`.
   nodeSelector: {}
@@ -839,13 +839,13 @@ managementController:
   #      name: secret-name
 
   ## @param managementController.resources Resources limits and requests for the management controller containers.
-  resources: {}
-    # limits:
-    #   cpu: 100m
-    #   memory: 128Mi
-    # requests:
-    #   cpu: 100m
-    #   memory: 128Mi
+  resources:
+     limits:
+       cpu: 1000m
+       memory: 1024Mi
+     requests:
+       cpu: 100m
+       memory: 128Mi
 
   ## @param managementController.nodeSelector Node selector for management controller pods. Defaults to `global.nodeSelector`.
   nodeSelector: {}
@@ -902,13 +902,13 @@ webhooksServer:
   #      name: secret-name
 
   ## @param webhooksServer.resources Resources limits and requests for the webhooks server containers.
-  resources: {}
-    # limits:
-    #   cpu: 100m
-    #   memory: 128Mi
-    # requests:
-    #   cpu: 100m
-    #   memory: 128Mi
+  resources:
+     limits:
+       cpu: 1000m
+       memory: 1024Mi
+     requests:
+       cpu: 100m
+       memory: 128Mi
 
   ## @param webhooksServer.nodeSelector Node selector for the webhooks server pods. Defaults to `global.nodeSelector`.
   nodeSelector: {}
