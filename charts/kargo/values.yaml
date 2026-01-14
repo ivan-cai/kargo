@@ -59,6 +59,8 @@ global:
   ## @param global.securityContext Default security context for all Kargo pods.
   securityContext: {}
 
+  schedulerName: "default-scheduler"
+
 ## @section CRDs
 crds:
   ## @param crds.install Indicates if Custom Resource Definitions should be installed and upgraded as part of the release. If set to `false`, the CRDs will only be installed if they do not already exist.

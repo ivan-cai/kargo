@@ -99,4 +99,5 @@ spec:
           tolerations:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          schedulerName: {{ .Values.global.schedulerName | default "default-scheduler" }}
 {{- end }}
